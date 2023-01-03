@@ -19,7 +19,7 @@ btnsubmit.addEventListener('click',(e)=>{
     if(result.data.msg=='login successful'){
       alert("signup successfully");
       localStorage.setItem('token',result.data.token);
-     
+      window.open('chat.html');
     }
   })
   .catch(err=>{

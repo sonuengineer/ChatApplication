@@ -9,10 +9,14 @@ app.use(cors());
 
 const signlogin=require('./routes/usersignup');
 const User=require('./models/user');
+const Message=require('./models/messages');
+const messageroute=require('./routes/message');
 
 app.use(signlogin);
+app.use(messageroute);
 
-
+User.hasMany(Message);
+Message.belongsTo(User);
 
 sequelize
   .sync()

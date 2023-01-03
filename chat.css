@@ -1,0 +1,76 @@
+
+.msgbar{
+    position: fixed;
+    bottom: 0;
+    background-color: rebeccapurple;
+    width: 100%;
+    padding: 7px;
+
+}
+.fa-message{
+    color: rgb(225, 227, 228);
+}
+#inptext{
+    width: 50%;
+    margin-left: 240px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background-color: rgb(252, 253, 252);
+    border-radius: 6px;
+    font-weight: 500;
+}
+.sendmsg{
+    background-color: white;
+    border: none;
+    padding: 9px;
+    border-radius: 5px;
+    /* color: red; */
+    border: 1px solid white;
+
+}
+.indimsg{
+    margin-left: 400px;
+    margin-right: 400px;
+}
+#gchat{
+font-family: 'Satisfy', cursive;
+text-align: center;
+
+}
+
+#waytog{
+    margin-left: 5%;
+    text-decoration: none;
+    color: rgb(5, 181, 128);
+    font-size: 20px;
+}
+#welcomeuser{
+    color: rgba(72, 9, 231, 0.955);
+    font-size: larger;
+
+}#headmsg{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+    margin-inline: 1%;
+
+}
+#signout{
+    color: red;
+    cursor: pointer;
+    font-size: medium;
+
+}
+
+.groupsbtn {
+    width: 15%;
+    height: 50px;
+    border-radius: 90px;
+}
+
+.signoutbtn {
+     width: 15%;
+    height: 90px; 
+    border-radius: 30px;  
+}
