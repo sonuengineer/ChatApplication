@@ -51,7 +51,7 @@ sendmsg.addEventListener('click',(e)=>{
             // console.log(result.data.result[i].username == nam);
             if(result.data.result[i].username==nam){
 res += `
-            <div class="p-2 indimsg " style="background:green;border-bottom:4px solid red; color:white; ">
+            <div class="p-2 indimsg " style="background:blue;border-bottom:4px solid green; color:white; ">
             <span style="margin-left:80%;" >you : 
         </span>
             <span>${result.data.result[i].msg}</span>

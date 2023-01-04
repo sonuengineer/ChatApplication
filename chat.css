@@ -46,8 +46,8 @@ text-align: center;
     font-size: 20px;
 }
 #welcomeuser{
-    color: rgba(72, 9, 231, 0.955);
-    font-size: larger;
+    color: rgba(231, 9, 9, 0.955);
+    font-size: x-large;
 
 }#headmsg{
     display: flex;
@@ -71,6 +71,6 @@ text-align: center;
 
 .signoutbtn {
      width: 15%;
-    height: 90px; 
-    border-radius: 30px;  
+    height: 80px; 
+    border-radius: 20px;  
 }

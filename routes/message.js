@@ -6,6 +6,15 @@ let bodyParser = require("body-parser");
 const User = require('../models/user');
 router.use(bodyParser.json());
 
+const messageController = require('../controllers/message')
+router.post('/chatmessage',aut.authenticate,messageController.chatmes)
+router.get("/getmessages", aut.authenticate,messageController.getmes)
+router.get('/user',aut.authenticate,messageController.getuser)
+module.exports=router;
+
+
+
+
 
 // router.post('/chatmessage',aut.authenticate,async (req,res)=>{
 
@@ -49,8 +58,3 @@ router.use(bodyParser.json());
 // module.exports=router;
 
 
-const messageController = require('../controllers/message')
-router.post('/chatmessage',aut.authenticate,messageController.chatmes)
-router.get("/getmessages", aut.authenticate,messageController.getmes)
-router.get('/user',aut.authenticate,messageController.getuser)
-module.exports=router;
