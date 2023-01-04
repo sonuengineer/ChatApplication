@@ -7,43 +7,50 @@ const User = require('../models/user');
 router.use(bodyParser.json());
 
 
-router.post('/chatmessage',aut.authenticate,async (req,res)=>{
+// router.post('/chatmessage',aut.authenticate,async (req,res)=>{
 
-    let {message}=req.body;
-    console.log(req.body.message);
-    let userId=req.user.id;
-    let username=req.user.name;
+//     let {message}=req.body;
+//     console.log(req.body.message);
+//     let userId=req.user.id;
+//     let username=req.user.name;
 
-    Message.create({
-        msg:message,username,userId
-    })
-    .then(result=>{
-        res.json({result,suc:true});
-    })
-    .catch(err=>{
-        res.json(err);
-    })
-});
+//     Message.create({
+//         msg:message,username,userId
+//     })
+//     .then(result=>{
+//         res.json({result,suc:true});
+//     })
+//     .catch(err=>{
+//         res.json(err);
+//     })
+// });
 
-router.get("/getmessages", aut.authenticate, async (req, res) => {
-  console.log(req.body);
+// router.get("/getmessages", aut.authenticate, async (req, res) => {
+//   console.log(req.body);
 
-  Message.findAll()
-    .then((result) => {
-      res.json({ result, suc: true });
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-});
+//   Message.findAll()
+//     .then((result) => {
+//       res.json({ result, suc: true });
+//     })
+//     .catch((err) => {
+//       res.json(err);
+//     });
+// });
 
-router.get('/user',aut.authenticate,(req,res)=>{
-    User.findAll({where:{id:req.user.id}}).then(result=>{
-        res.json(result)
-    })
-    .catch(err=>{
-        res.json(err)
-    })
-})
+// router.get('/user',aut.authenticate,(req,res)=>{
+//     User.findAll({where:{id:req.user.id}}).then(result=>{
+//         res.json(result)
+//     })
+//     .catch(err=>{
+//         res.json(err)
+//     })
+// })
 
+// module.exports=router;
+
+
+const messageController = require('../controllers/message')
+router.post('/chatmessage',aut.authenticate,messageController.chatmes)
+router.get("/getmessages", aut.authenticate,messageController.getmes)
+router.get('/user',aut.authenticate,messageController.getuser)
 module.exports=router;
