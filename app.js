@@ -20,22 +20,24 @@ const sequelize = require("./models/database");
 // Models
 const User=require('./models/user');
 const Message=require('./models/messages');
-
+const Group=require('./models/groups');
+const Usergroup=require('./models/usergroups');
 
 // Routes
 const signlogin=require('./routes/usersignup');
 const messageroute=require('./routes/message');
-
+const CreateGroup=require('./routes/creategroup');
 
 
 app.use(signlogin);
 app.use(messageroute);
-
+app.use(CreateGroup);
 
 // Association
 User.hasMany(Message);
 Message.belongsTo(User);
-
+User.belongsToMany(Group,{through:Usergroup});
+Group.belongsToMany(User,{through:Usergroup});
 
 
 sequelize
